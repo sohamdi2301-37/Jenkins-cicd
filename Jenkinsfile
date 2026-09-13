@@ -12,14 +12,14 @@ pipeline {
         stage('Build & Test') {
             steps {
                 echo 'Running JUnit test cases...'
-                bat 'mvn clean test'
+                sh 'mvn clean test'
             }
         }
 
         stage('Package') {
             steps {
                 echo 'Building JAR artifact...'
-                bat 'mvn package -DskipTests'
+                sh 'mvn package -DskipTests'
             }
         }
 
